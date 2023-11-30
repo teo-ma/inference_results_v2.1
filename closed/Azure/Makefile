@@ -373,10 +373,10 @@ link_dirs:
 # Small helper to check if nvidia-docker is installed correctly.
 .PHONY: docker_sanity
 docker_sanity:
-	docker pull nvcr.io/nvidia/cuda:11.0.3-runtime-ubuntu18.04
+	docker pull nvcr.io/nvidia/cuda:11.0.3-runtime-ubuntu20.04
 	$(DOCKER_RUN_CMD) --rm \
 		-e NVIDIA_VISIBLE_DEVICES=${NVIDIA_VISIBLE_DEVICES} \
-		nvcr.io/nvidia/cuda:11.0.3-runtime-ubuntu18.04 nvidia-smi
+		nvcr.io/nvidia/cuda:11.0.3-runtime-ubuntu20.04 nvidia-smi
 	@echo "Nvidia-docker is installed correctly!"
 
 DOCKER_FILENAME := Dockerfile.$(ARCH)
